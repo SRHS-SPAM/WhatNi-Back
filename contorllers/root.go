@@ -17,10 +17,10 @@ func NewContorllers(port string) {
 	r.POST("/make-student", func(c *gin.Context) {
 		services.MakeUser(c, db)
 	})
-	r.PUT("refresh-wh:hakbun", func(c *gin.Context) {
+	r.PUT("/refresh-wh", func(c *gin.Context) {
 		services.RefreshWh(c, db)
 	})
-	r.PUT("wh:hakbun", func(c *gin.Context) {
+	r.PUT("/wh/:hakbun", func(c *gin.Context) {
 		services.Wh(c, db)
 	})
 
